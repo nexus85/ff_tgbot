@@ -8,6 +8,7 @@ from decouple import config
 # CHAT_ID = config('CHAT_ID', cast=str)
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 CHAT_ID = os.getenv('CHAT_ID')
+SLEEP = os.getenv('SLEEP')
 def main():
     bot = Bot(token=BOT_TOKEN)
 
@@ -18,7 +19,7 @@ def main():
         except:
             logger.exception('Ошибка всего')
 
-        time.sleep(20 * 60)
+        time.sleep(SLEEP)
 
 
 if __name__ == '__main__':
